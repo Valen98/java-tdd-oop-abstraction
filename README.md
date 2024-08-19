@@ -121,6 +121,9 @@ I want users to know if they are able to log in or not based on whether their
 account is enabled or disabled.
 ```
 
+## Class diagram
+![](LoginClassDiagram.png)
+
 Share your work with your morning teacher for feedback and discussion.
 
 ## Next steps
