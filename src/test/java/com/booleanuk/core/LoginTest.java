@@ -7,9 +7,13 @@ public class LoginTest {
 
     @Test
     public void createUserTest() {
-        Login login = new Login("Leo@test.com", "Password");
+        Login login = new Login();
 
+        Assertions.assertEquals("User has now been created.", login.createUser("Leo@test.com", "Password123", "Password123"));
+    }
 
-        Assertions.assertEquals("Leo@test.com", login.getEmail());
+    @Test
+    public void loginUser() {
+
     }
 }
