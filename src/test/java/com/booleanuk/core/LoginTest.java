@@ -13,7 +13,9 @@ public class LoginTest {
     }
 
     @Test
-    public void loginUser() {
-
+    public void loginUserTest() {
+        Login login = new Login();
+        login.createUser("Leo@test.com", "Password123", "Password123");
+        Assertions.assertEquals("Account is disabled, cannot login", login.loginUser("Leo@test.com", "Password123"));
     }
 }
