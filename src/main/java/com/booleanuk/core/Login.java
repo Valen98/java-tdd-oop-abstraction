@@ -9,6 +9,9 @@ public class Login {
 
     public String createUser(String email, String password, String validatePassword) {
         if( validateEmail(email) && validatePassword(password, validatePassword)) {
+            setEmail(email);
+            setPassword(password);
+            setDisabled(true);
             return "User has now been created.";
 
         }else if(!validateEmail(email)){
@@ -18,6 +21,19 @@ public class Login {
             return "Password is wrong.";
         }else {
             return "Error creating account";
+        }
+    }
+
+
+    public String loginUser(String email, String password) {
+        if(email.equals(this.email) && this.password.equals(password)) {
+            if(this.disabled) {
+                return "Account is disabled, cannot login";
+            }else {
+                return "Successfully logged in";
+            }
+        }else {
+            return "Email or password does not match";
         }
     }
 
